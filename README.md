@@ -1,3 +1,7 @@
+# Simon game
+
+This project made as practice part of [freeCodeCamp](https://www.freecodecamp.org/) curriculum. See demo at [codepen.io](https://codepen.io/astulov/pen/RMgrPE).
+
 # `angular-seed` — the seed for AngularJS apps
 
 This project is an application skeleton for a typical [AngularJS][angularjs] web app. You can use it
