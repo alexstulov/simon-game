@@ -1,1 +1,56 @@
-<p>This is the partial for view 1.</p>
+<div class="container" ng-app="simon" ng-controller="View1Ctrl">
+    <div class="simon-layout">
+          <div class="row">
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 section section-green" data-tune-code="green" id="section-green" ng-mousedown="clickSection($event);" ></div>
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 section section-red" data-tune-code="red" id="section-red" ng-mousedown="clickSection($event);" ></div>
+          </div>
+          <div class="row">
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 section section-yellow" data-tune-code="yellow" id="section-yellow" ng-mousedown="clickSection($event);" ng-mouseup="unclickSection($event);"></div>
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 section section-blue"  data-tune-code="blue" id="section-blue" ng-mousedown="clickSection($event);" ng-mouseup="unclickSection($event);"></div>
+          </div>
+          <div class="row menu-layout text-center">
+              <div class="col-lg-12">
+                  <div class="row">
+                      <div class='col-lg-12' style="margin-bottom: 7px;">
+                          <h1 style='font-size: 40px; font-weight: bold;'>{{appName}}</h1>
+                      </div>
+                  </div>
+                  <div class="row" style="margin-bottom: 7px;">
+                      <div class='col-xs-5 col-sm-5 col-md-5 col-lg-5'>
+                          <div style="height: 34px; margin: 0; border: 2px solid #282b2a; border-radius: 13%; background-color: darkred; color: red; font-size: 18px; font-weight: bolder; line-height: 30px;">
+                              <span>{{countScreen}}</span>
+                          </div>
+                          <span>Count</span>
+                      </div>
+                      <div class='col-xs-3 col-sm-3 col-md-3 col-lg-3'>
+                          <button class="btn btn-danger btn-sm" style="height: 30px; width: 30px; border: 3px solid #282b2a; border-radius: 50%;" ng-disabled="!isOn" ng-click="startTheGame();"></button>
+                          <span>Start</span>
+                      </div>
+                      <div class='col-xs-3 col-sm-3 col-md-3 col-lg-3' style=" margin-top: -14px;">
+                          <div class="row">
+                              <div class="col-lg-12">
+                                  <div ng-class="{'strict-off': !isStrict, 'strict-on': isStrict}" style="border: 1px solid #282b2a; width:8px; height:8px; margin-left: 11px;"></div>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-lg-12">
+                                  <button class="btn btn-warning btn-sm" style="height: 30px; width: 30px; border: 3px solid #282b2a; border-radius: 50%;" ng-click="toggleStrictMode();" ng-disabled="!isOn"></button>
+                                  <span>Strict</span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class='row'>
+                      <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+                          <span style="display: inline-block; position: relative; top: -17px; left: -5px;">Off</span>
+                          <label class="switch">
+                              <input type="checkbox" ng-click="togglePower();">
+                              <span class="slider round"></span>
+                          </label>
+                          <span style="display: inline-block; position: relative; top: -17px; right: -5px;">On</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>

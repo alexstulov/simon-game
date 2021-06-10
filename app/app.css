@@ -1,25 +1,138 @@
-/* app css stylesheet */
-
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+.simon-layout {
+  background-color: red;
+  width: 440px!important;
+  min-width: 440px!important;
+  max-width: 440px!important;
+  margin: 20px auto;
+  border: 24px solid #282b2a;
+  border-radius: 50%;
+  overflow:hidden;
+  position: relative;
+}
+.simon-layout .section {
+  height: 200px;
+  text-align: center;
+  vertical-align: middle;
+  border-style: solid;
+  border-color: #282b2a;
+  z-index: 1;
+  cursor: pointer;
+}
+.simon-layout .section.section-green {
+  background-color: green;
+  border-width: 0 12px 12px 0;
+}
+.simon-layout .section.section-alt-green {
+  background-color: lightgreen;
+  border-width: 0 12px 12px 0;
+}
+.simon-layout .section.section-red {
+  background-color: red;
+  border-width: 0 0 12px 12px;
+}
+.simon-layout .section.section-alt-red {
+  background-color: pink;
+  border-width: 0 0 12px 12px;
+}
+.simon-layout .section.section-yellow {
+  background-color: yellow;
+  border-width: 12px 12px 0 0;
+}
+.simon-layout .section.section-alt-yellow {
+  background-color: lightyellow;
+  border-width: 12px 12px 0 0;
+}
+.simon-layout .section.section-blue {
+  background-color: blue;
+  border-width: 12px 0 0 12px;
+}
+.simon-layout .section.section-alt-blue {
+  background-color: lightblue;
+  border-width: 12px 0 0 12px;
+}
+.simon-layout .menu-layout{
+  background-color: lightgrey;
+  width: 225px;
+  height: 225px;
+  border: 13px solid #282b2a;
+  border-radius: 50%;
+  position: absolute;
+  top:22%;
+  left:25%;
+  overflow: hidden;
+  z-index: 2;
+}
+.strict-off{
+  width: 7px;
+  height: 7px;
+  margin: 0 auto 5px;
+  color: blue;
+  background-color: black;
+  border-radius: 50%;
+}
+.strict-on{
+  width: 7px;
+  height: 7px;
+  margin: 0 auto 5px;
+  background-color: red;
+  border-radius: 50%;
 }
 
-.menu:before {
-  content: "[";
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
 }
 
-.menu:after {
-  content: "]";
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
 }
 
-.menu > li {
-  display: inline;
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
 }
 
-.menu > li + li:before {
-  content: "|";
-  padding-right: 0.3em;
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
